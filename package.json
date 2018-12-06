@@ -1,0 +1,16 @@
+{
+  "name": "adam",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "http://git.imweb.io/sumbur/adam.git",
+  "author": "mSumbur <m.sumbur@outlook.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "jest": "^23.6.0"
+  },
+  "scripts": {
+    "test": "npx jest",
+    "coverage": "npx jest --coverage"
+  }
+}
