@@ -1,4 +1,4 @@
-const base = require('../src/base');
+const base = require('../src');
 
 describe('测试 query 函数', () => {
   test('输入 "hello" 和 "?hello=js" 输出 "js"', () => {

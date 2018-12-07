@@ -64,7 +64,7 @@ const removeNode = (node) => {
  * @param {DOM} target
  */
 const insertAfter = (node, target) => {
-  return target.parentNode.appendChild(node)
+  target.parentNode.appendChild(node)
 }
 
 /**
@@ -77,7 +77,7 @@ const addClass = (node, className) => {
     return className
   } else {
     node.classList.add(className)
-    return node.classList
+    return 
   }
 }
 
@@ -89,7 +89,7 @@ const addClass = (node, className) => {
 const removeClass = (node, className) => {
   if (node.classList.contains(className)) {
     node.classList.remove(className)
-    return node.classList
+    return 
   } else {
     return className
   }

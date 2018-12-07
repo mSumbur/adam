@@ -1,7 +1,7 @@
 {
   "name": "adam",
   "version": "1.0.0",
-  "main": "src",
+  "main": "lib/base.js",
   "repository": "http://git.imweb.io/sumbur/adam.git",
   "author": "mSumbur <m.sumbur@outlook.com>",
   "license": "MIT",

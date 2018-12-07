@@ -1,7 +1,7 @@
 # adam-func
 
 这个项目拥有使用频率非常高的几个函数
-[github 地址](http://git.imweb.io/imweb-teacher/adam)
+[github 地址](https://github.com/mSumbur/adam)
 
 ## 安装
 ```
@@ -35,7 +35,7 @@ adam.$(selector) // return {DOM|Null}
 ### removeNode(node)
 输出 DOM 节点
 ```
-adam.removeNode(node) //return {DOM}
+adam.removeNode(node) 
 ```
 
 ### insertAfter(node)
@@ -47,13 +47,13 @@ adam.insertAfter(node, target)
 ### addClass(node, className)
 添加指定类名
 ```
-adam.addClass(node, className) // return true or false
+adam.addClass(node, className) 
 ```
 
 ### removeClass(node, className)
 删除类名
 ```
-adam.removeClass(node, className) // return true or false
+adam.removeClass(node, className) 
 ```
 
 ### getAbsoluteUrl(url)
