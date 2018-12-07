@@ -63,23 +63,12 @@ adam.getAbsoluteUrl('/adam-func') //return 'https://github.com/author-name/adam-
 ```
 
 ### debounce(callback, time)
-防抖动
+防抖动, 指定时间后执行函数
 ```
- test('test true', () => {
-    const debounce = adam.debounce
-    jest.useFakeTimers() // 声明语句，启用jest伪装计时器函数，因为使用了advanceTimersByTime()
-    const callback = jest.fn() // 声明语句，使用jest伪装函数
-    const createDebounce = debounce(callback, 300)
-    expect(callback).not.toBeCalled() // callback还未被调用
-    for (let i = 0; i < 11; i++) { // 循环执行createDebounce 11次，每次都在经过299ms时setTimeout被刷新
-      createDebounce()
-      jest.advanceTimersByTime(299) // 过了299ms
-    }
-    expect(callback).not.toBeCalled() // callback还未被调用
-    jest.advanceTimersByTime(1) // 再过1ms
-    expect(callback).toBeCalled() // callback被调用
-    expect(callback).toHaveBeenCalledTimes(1) // callback只被调用1次
-  })
+adam.debounce(() => {
+  console.log('work')
+}, 1000)    
+
 ```
 
 ### removeItemByIndex(index, arr)

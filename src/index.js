@@ -77,7 +77,7 @@ const addClass = (node, className) => {
     return className
   } else {
     node.classList.add(className)
-    return 
+    return
   }
 }
 
@@ -89,7 +89,7 @@ const addClass = (node, className) => {
 const removeClass = (node, className) => {
   if (node.classList.contains(className)) {
     node.classList.remove(className)
-    return 
+    return
   } else {
     return className
   }
@@ -113,6 +113,7 @@ const getAbsoluteUrl = (url) => {
  * 防抖动函数了啦，有做个这个习题，不清楚回去复习
  */
 const debounce = (callback, time) => {
+  time = time || 300 // 默认值
   setTimeout(() => {
     callback('test')
   }, time)
