@@ -1,19 +1,89 @@
-**adam** 
+# adam-func
+
+这个项目拥有使用频率非常高的几个函数
 [github 地址](http://git.imweb.io/imweb-teacher/adam)
 
-**注意**：
-* `npm run test` 可以跑测试
-* code coverage 90% 以上
-* `npm run coverage` 跑测试并告知 coverage 的结果
+## 安装
+```
+$ npm install -D adam-func
+```
 
-**加分项**：
+## 使用
+```
+const adam = require('adam-func')
+```
 
-1. 使用 ES6 ，并且编译出一份 ES5 的文件
-2. 遵从 ESLint 或者 standardjs 等代码规范
-3. 函数多多益善
-4. [发布到 npm](https://github.com/muwenzi/Program-Blog/issues/12) ，发布后把链接贴到你的总结里
-5. 测试文件统一归到 `test` 目录下
-6. code coverage 不小于 95%
-7. 使用 git hook 来自动跑用例和代码覆盖率
-   * [自定义 Git - Git 钩子](https://git-scm.com/book/zh/v2/%E8%87%AA%E5%AE%9A%E4%B9%89-Git-Git-%E9%92%A9%E5%AD%90)
-   * [husky](https://github.com/typicode/husky)
+## 函数
+### query(name, querystring)
+获取指定的 querystring 中指定 name 的 value
+```
+adam.query('name', '?name=js') // return 'js'
+```
+
+### serialize(data)
+序列化对象，把对象转成 url 字符串
+```
+adam.serialize({hello: 'js', hi: 'jsx'}) // return '?hello=js&hello=jsx'
+```
+
+### $(selector)
+根据选择器查找 DOM
+```
+adam.$(selector) // return {DOM|Null}
+```
+
+### removeNode(node)
+输出 DOM 节点
+```
+adam.removeNode(node) //return {DOM}
+```
+
+### insertAfter(node)
+在 target 节点之后插入 node 节点
+```
+adam.insertAfter(node, target) 
+```
+
+### addClass(node, className)
+添加指定类名
+```
+adam.addClass(node, className) // return true or false
+```
+
+### removeClass(node, className)
+删除类名
+```
+adam.removeClass(node, className) // return true or false
+```
+
+### getAbsoluteUrl(url)
+获取绝对路径
+```
+adam.getAbsoluteUrl('/adam-func') //return 'https://github.com/author-name/adam-func'
+```
+
+### debounce(callback, time)
+防抖动
+```
+ test('test true', () => {
+    const debounce = adam.debounce
+    jest.useFakeTimers() // 声明语句，启用jest伪装计时器函数，因为使用了advanceTimersByTime()
+    const callback = jest.fn() // 声明语句，使用jest伪装函数
+    const createDebounce = debounce(callback, 300)
+    expect(callback).not.toBeCalled() // callback还未被调用
+    for (let i = 0; i < 11; i++) { // 循环执行createDebounce 11次，每次都在经过299ms时setTimeout被刷新
+      createDebounce()
+      jest.advanceTimersByTime(299) // 过了299ms
+    }
+    expect(callback).not.toBeCalled() // callback还未被调用
+    jest.advanceTimersByTime(1) // 再过1ms
+    expect(callback).toBeCalled() // callback被调用
+    expect(callback).toHaveBeenCalledTimes(1) // callback只被调用1次
+  })
+```
+
+### removeItemByIndex(index, arr)
+根据指定索引 (index) 移除 arr[index]
+```
+adam.removeItemByIndex(0, ['1', '2', '3']) // return ['2', '3']
+```
